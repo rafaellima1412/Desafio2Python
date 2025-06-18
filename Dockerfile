@@ -1,12 +1,16 @@
-FROM python:3.11-slim-buster
+FROM python:3.12-slim-bullseye
+
+RUN apt-get update && apt-get install -y curl build-essential && apt-get clean
+
+RUN curl -sSL https://install.python-poetry.org | python3 -
+ENV PATH="/root/.local/bin:$PATH"
 
 WORKDIR /code
 
 COPY pyproject.toml poetry.lock ./
 
-RUN pip install poetry
-RUN poetry config virtualenvs.create false
-RUN poetry install --only main
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-root --no-interaction --no-ansi
 
 COPY . .
 

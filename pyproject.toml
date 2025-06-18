@@ -1,16 +1,16 @@
-[project]
+[tool.poetry]
 name = "desafiopython"
 version = "0.1.0"
 description = "estudo de python"
-authors = [
-    {name = "Rafaellima1412",email = "rafaellima1412@gmail.com"}
-]
-license = {text = "MIT"}
+authors = ["Rafaellima1412 <rafaellima1412@gmail.com>"]
+license = "MIT"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-]
+package-mode = false
 
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.34.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
