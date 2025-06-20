@@ -1,0 +1,14 @@
+{% extends "home.html" %}
+
+{% block todo_container %}
+<main class="container mt-4">
+
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Erro!</h4>
+        <p>{{ detail }}</p>
+        <hr>
+        <a href="/todo" class="btn btn-primary">Voltar para lista de Todos</a>
+    </div>
+
+</main>
+{% endblock %}
