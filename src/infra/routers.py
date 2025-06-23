@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path, HTTPException, status, Request, Depends, Form
 from starlette.responses import HTMLResponse
 
-from src.api.todo import templates
+from src.application.todo import templates
 from src.domain.todo import Todo, TodoItem
 
 router = APIRouter()
